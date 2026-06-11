@@ -1,0 +1,107 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --off-color: #fff;
+  --on-color: yellow;
+}
+
+body {
+  background-color: #000;
+}
+
+.container {
+  height: 31.25em;
+  width: 31.25em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.center {
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.bulb {
+  position: absolute;
+  background-color: var(--off-color);
+  height: 15.7em;
+  width: 15.7em;
+  border-radius: 50%;
+  top: 1.25em;
+  transition: all 0.3s ease;
+}
+
+.bulb::before {
+  position: absolute;
+  content: "";
+  background-color: var(--off-color);
+  height: 2.6em;
+  width: 6.25em;
+  top: 14.9em;
+  left: 4.68em;
+  border-radius: 0 0 0.3em 0.3em;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.bottom {
+  position: absolute;
+  background-color: #6b697e;
+  width: 5.5em;
+  height: 4em;
+  top: 17.5em;
+  border-radius: 0 0 15px 15px;
+}
+
+.bottom::before {
+  position: absolute;
+  content: "";
+  background-color: #a29dac;
+  width: 6.5em;
+  height: 0.6em;
+  border-radius: 10px;
+  left: -0.5em;
+  top: 0.45em;
+  box-shadow:
+    0 1em 0 #a29dac,
+    0 2em 0 #a29dac;
+}
+
+#btn {
+  display: block;
+  position: absolute;
+  width: 6.25em;
+  bottom: 1.87em;
+  font-size: 1.2em;
+  padding: 0.6em 0;
+  border: none;
+  outline: none;
+  border-radius: 3.12em;
+  background-color: #ffffff;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#btn:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+.bulb.lightup {
+  background-color: var(--on-color);
+  box-shadow:
+    0 0 30px var(--on-color),
+    0 0 60px var(--on-color),
+    0 0 100px var(--on-color);
+}
+
+.bulb.lightup::before {
+  background-color: var(--on-color);
+}
